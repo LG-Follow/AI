@@ -1,11 +1,13 @@
 from flask import Flask, request, jsonify
 import torch
+from flask_cors import CORS
 from transformers import BlipProcessor, BlipForConditionalGeneration
 from PIL import Image
 import requests
 from io import BytesIO
 
 app = Flask(__name__)
+CORS(app)
 
 # 모델과 프로세서 로드
 model_path = "project_directory/models/trained_model"
